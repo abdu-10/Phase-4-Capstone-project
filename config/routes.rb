@@ -1,8 +1,8 @@
 Rails.application.routes.draw do  
   resources :owners, only: [:create, :show, :update]  
-  resources :rider_bikes, only: [:create, :show, :update]  
-  resources :riders, only: [:create, :show, :update]
   resources :bikes, only: [:create, :index, :show, :update]
+  resources :riders, only: [:create, :show, :update]   
+  resources :rider_bikes, only: [:create, :show, :update]  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # These routes shall work to authenticate both owners and rider, and subsequently help log them out
@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   # get logged in owner
   get "/o-me", to: "owners#show_me"
   # get logged in client
-  get "/c-me", to: "clients#show_me"
+  get "/c-me", to: "riders#show_me"
 end
