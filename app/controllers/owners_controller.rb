@@ -1,5 +1,5 @@
 class OwnersController < ApplicationController
-    # skip_before_action :authorize, only: [:create]
+    skip_before_action :authorize, only: [:create]
 
     # "/post" Creates a new instance of an Owner (Create)
     def create

@@ -1,5 +1,5 @@
 class RidersController < ApplicationController
-    # skip_before_action :authorize, only: [:create]
+    skip_before_action :authorize, only: [:create]
 
     # "/post" Creates a new instance of an Rider (Create)
     def create
