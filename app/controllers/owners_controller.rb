@@ -1,5 +1,5 @@
 class OwnersController < ApplicationController
-    skip_before_action :authorize, only: [:create]
+    # skip_before_action :authorize, only: [:create]
 
     # "/post" Creates a new instance of an Owner (Create)
     def create
@@ -14,7 +14,7 @@ class OwnersController < ApplicationController
     end
 
     def show_me
-        user = Owner.find_by(id: session[:user_id])
+        user = Owner.find_by(id: session[:user_id]) || User.find_by(id: session[:user_id])
         render json: user
     end
 
@@ -39,6 +39,6 @@ class OwnersController < ApplicationController
     end
 
     def owner_params
-        params.permit(:full_name, :username, :password, :phone_number)
+        params.permit(:full_name, :username, :password, :phone_number, :password_confirmation)
     end
 end

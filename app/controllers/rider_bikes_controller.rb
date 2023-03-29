@@ -6,9 +6,17 @@ class RiderBikesController < ApplicationController
     end
 
    
-    def show
-        rider_bike = RiderBike.find(params[:id])
-        render json: rider_bike
+    
+    # instance method to get all owner riders
+    def rider_booked
+        myriders =  RiderBike.where(owner_id: params[:owner_id])
+        render json: myriders
+    end
+
+    # instance method to get all rider bikes
+    def bike_booked
+        riderBikes =  RiderBike.where(rider_id: params[:rider_id])
+        render json: riderBikes
     end
 
 

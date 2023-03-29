@@ -1,5 +1,11 @@
 class RidersController < ApplicationController
-    skip_before_action :authorize, only: [:create]
+    # skip_before_action :authorize, only: [:create]
+
+    def index
+        riders = Rider.all   
+        render json: riders
+
+    end
 
     # "/post" Creates a new instance of an Rider (Create)
     def create
@@ -39,6 +45,6 @@ class RidersController < ApplicationController
     end
 
     def rider_params
-        params.permit(:full_name, :username, :password, :phone_number, :id_number, :spouse_contact, :date_of_birth, :licence_number, :email)
+        params.permit(:full_name, :username, :password, :phone_number, :id_number, :spouse_contact, :date_of_birth, :licence_number, :email, :password_confirmation)
     end
 end

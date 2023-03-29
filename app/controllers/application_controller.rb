@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     include ActionController::Cookies
-    before_action :authorize
+    # before_action :authorize
 
     # show error message when trying to use invalid parameters to create entity
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_params
@@ -8,9 +8,9 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
     private
-    def authorize
-        return render json: { errors: "You are unauthorized to access resource, please log in or contact support for access" }, status: :unauthorized unless session.include? :user_id
-    end
+    # def authorize
+    #     return render json: { errors: "You are unauthorized to access resource, please log in or contact support for access" }, status: :unauthorized unless session.include? :user_id
+    # end
 
     def invalid_params(invalid)
         render json: { errors: [invalid.record.errors] }, status: :unprocessable_entity
