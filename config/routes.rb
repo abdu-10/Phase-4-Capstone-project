@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "/rider_bikes/bikes/:rider_id", to: "rider_bikes#bike_booked"
   # get all riders for an indivudual owner, based on the owners id
   get "/rider_bikes/riders/:owner_id", to: "rider_bikes#rider_booked"
+  # get all owner bikes
+   get "/rider_bikes/bikes/:owner_id", to: "rider_bikes#owner_bikes"
   # These routes shall work to authenticate both owners and rider, and subsequently help log them out
   post "/login", to: "sessions#create"
   # log out session
