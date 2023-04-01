@@ -26,13 +26,13 @@ module BikeFleet
     config.middleware.use ActionDispatch::Session::CookieStore
 
     config.action_dispatch.cookies_same_site_protection = :strict
-    config.middleware.use Rack::Cors do
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
         resource '*',
                  headers: :any,
                  expose: %w(access-token expiry token-type uid client),
-                 methods: %i(post)
+                 methods: %i(get post patch put delete)
       end
     end
     # Configuration for the application, engines, and railties goes here.
