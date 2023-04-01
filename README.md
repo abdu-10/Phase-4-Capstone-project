@@ -39,20 +39,23 @@ iii. Controllers/actions/Routes
 5. get "/bikes/:owner_id/payments"
 6. POST "/riders"
 7. get "/bikes"
-8. PATCH "/bikes/:id"
-9. get "/bike/:owner_id"
-10. delete "/user/:id"
+8. PATCH "/rider/:id"
+9.    PATCH "/owner/:id"
+10. get "/bike/:owner_id"
+11. delete "/user/:id"
 MVP
 1. An owner is able to register on the platform
 2. An owner is able to post a bike to the platform
 3. An owner is able to view all drivers on the platform
 4. An owner is able to view the riders who have booked their bikes.
 5. An owner is able to keep track of payments on their bike.
-6. A rider is able to Register on the platform
-7. A rider is able to see all available bikes
-8. A rider is able to book a ride and pay for it
-9. A rider is able to gain access to the booked bike.
-10. Platform users are able to delete their accounts.
+6. An owner is able to edit his Account
+7. A rider is able to Register on the platform
+8. A rider is able to see all available bikes
+9. A rider is able to book a ride and pay for it
+10. A rider is able to gain access to the booked bike.
+11. A rider is able to edit his account
+12. Platform users are able to delete their accounts.
 
 
 FrontEnd:
