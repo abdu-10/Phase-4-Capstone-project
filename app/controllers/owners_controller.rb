@@ -14,7 +14,7 @@ class OwnersController < ApplicationController
     end
 
     def show_me
-        user = Owner.find_by(id: session[:user_id]) || User.find_by(id: session[:user_id])
+        user = Owner.find_by(id: session[:user_id]) || Rider.find_by(id: session[:user_id])
         render json: user
     end
 
