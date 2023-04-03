@@ -7,6 +7,11 @@ class BikesController < ApplicationController
         render json: bike, status: :created
     end
 
+    def owner_bikes
+        mybikes = Bike.where(owner_id: params[:owner_id])
+        render json: mybikes
+    end
+
     # '/bikes' Displays all bikes
     def index
         bikes = Bike.all
